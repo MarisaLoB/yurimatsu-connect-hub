@@ -3,6 +3,7 @@ import {useState,type ReactNode} from 'react';
 import {LayoutGrid,CalendarDays,Video,Globe2,Users,Handshake,ArrowUpRight,Bell,Search,Menu,X,HelpCircle,Bookmark,ChevronDown} from 'lucide-react';
 import {Button} from '@/components/ui/button';
 import {DemoProvider,useDemo} from './provider';
+import logo from '@/assets/yurimatsu-logo.png.asset.json';
 const nav=[{label:'Community home',to:'/',icon:LayoutGrid},{label:'Events',to:'/events',icon:CalendarDays},{label:'Live workshops',to:'/workshops',icon:Video},{label:'Global insights',to:'/insights',icon:Globe2},{label:'Your network',to:'/network',icon:Users},{label:'AI matchmaking',to:'/matchmaking',icon:Handshake}] as const;
 export function CommunityShell({children}:{children:ReactNode}){return <DemoProvider><Shell>{children}</Shell></DemoProvider>;}
 function Shell({children}:{children:ReactNode}){const path=useRouterState({select:s=>s.location.pathname});const [mobile,setMobile]=useState(false);const [search,setSearch]=useState('');const demo=useDemo();
